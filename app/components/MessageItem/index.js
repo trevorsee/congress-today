@@ -5,14 +5,25 @@
 */
 
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+
+const Item = styled.li`
+  /* Adapt the colors based on primary prop */
+  background: ${props => props.chamber=='house' ? 'green' : 'blue'};
+  color: white;
+
+  font-size: 1em;
+  margin: 1em 0;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+`;
 
 
-function MessageItem(message) {
+function MessageItem(props) {
   return (
-    <li>
-      <p>{message.message.update}</p>
-    </li>
+    <Item chamber={props.chamber}>
+      <p>{props.message.update}</p>
+    </Item>
   );
 }
 
