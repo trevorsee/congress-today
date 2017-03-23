@@ -20,6 +20,16 @@ const List = styled.ul`
   padding: 0;
 `;
 
+const Headline = styled.h1`
+  margin: 1rem 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: ${props => props.chamber=='house' ? 'green' : 'blue'};
+`;
+
 function MessageList(props) {
   const messageItems = props.messages.map((message) => {
     return <MessageItem key={message.id} message={message} chamber={props.chamber}/>
@@ -28,7 +38,7 @@ function MessageList(props) {
   return (
     <ListContainer>
       <List>
-        <h1>{props.chamber}</h1>
+        <Headline chamber={props.chamber}>{props.chamber}</Headline>
         {messageItems}
       </List>
     </ListContainer>

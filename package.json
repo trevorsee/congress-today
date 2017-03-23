@@ -221,10 +221,14 @@
     "ip": "1.1.4",
     "lodash": "4.17.2",
     "minimist": "1.2.0",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.11",
     "react": "15.4.1",
     "react-dom": "15.4.1",
+    "react-fontawesome": "^1.5.0",
     "react-helmet": "3.2.2",
     "react-intl": "2.1.5",
+    "react-moment": "^0.2.2",
     "react-redux": "4.4.6",
     "react-router": "3.0.0",
     "react-router-redux": "4.0.6",
@@ -238,6 +242,7 @@
     "superagent": "^3.5.1",
     "superagent-no-cache": "^0.1.1",
     "warning": "3.0.0",
+    "webpack": "^2.2.0-rc.3",
     "whatwg-fetch": "2.0.1"
   },
   "devDependencies": {

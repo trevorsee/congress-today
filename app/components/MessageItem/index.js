@@ -6,14 +6,18 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 
-const Item = styled.li`
-  /* Adapt the colors based on primary prop */
+const ItemContainer = styled.li`
+  font-size: 1em;
+  padding: 0.25em 1em;
+`;
+
+const Item = styled.div`
   background: ${props => props.chamber=='house' ? 'green' : 'blue'};
   color: white;
-
   font-size: 1em;
-  margin: 1em 0;
+  margin: 0 0 1em;
   padding: 0.25em 1em;
   border-radius: 3px;
 `;
@@ -21,9 +25,12 @@ const Item = styled.li`
 
 function MessageItem(props) {
   return (
-    <Item chamber={props.chamber}>
-      <p>{props.message.update}</p>
-    </Item>
+    <ItemContainer>
+      <div>{moment(props.message.timestamp).format("hh:mm A")}</div>
+      <Item chamber={props.chamber}>
+        <p>{props.message.update}</p>
+      </Item>
+    </ItemContainer>
   );
 }
 

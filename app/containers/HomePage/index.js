@@ -11,18 +11,22 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MessageList from 'components/MessageList';
-import Searchbar from 'components/Searchbar';
 import request from 'superagent';
 import nocache from 'superagent-no-cache';
-
 import styled from 'styled-components';
-const Wrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
+
+import MessageList from 'components/MessageList';
+import Navigation from 'components/Navigation';
+
+const Container = styled.div`
+  max-width: 80rem;
   margin: 0 auto;
-  display: flex;
   min-height: 100%;
-  padding: 0 16px;
+`;
+const Wrapper = styled.div`
+  display: flex;
+  background: white;
+  padding: 0 1rem;
 `;
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -36,8 +40,8 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   }
 
   componentDidMount() {
-    const urlS = `https://congress.api.sunlightfoundation.com/floor_updates?legislative_day=2017-01-11&chamber=senate`;
-    const urlH = `https://congress.api.sunlightfoundation.com/floor_updates?legislative_day=2017-01-11&chamber=house`;
+    const urlS = `https://congress.api.sunlightfoundation.com/floor_updates?chamber=senate`;
+    const urlH = `https://congress.api.sunlightfoundation.com/floor_updates?chamber=house`;
     request.get(urlS)
            .use(nocache)
            .end( (err, res) => {
@@ -52,10 +56,13 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
 
   render() {
     return (
-      <Wrapper>
-        <MessageList messages={this.state.messages_house} chamber='house' />
-        <MessageList messages={this.state.messages_senate} chamber='senate'/>
-      </Wrapper>
+      <Container>
+        <Navigation />
+        <Wrapper>
+          <MessageList messages={this.state.messages_house} chamber='house' />
+          <MessageList messages={this.state.messages_senate} chamber='senate'/>
+        </Wrapper>
+      </Container>
     );
   }
 }
