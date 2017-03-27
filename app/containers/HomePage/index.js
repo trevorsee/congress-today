@@ -26,6 +26,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   background: white;
+  border-top: 1px solid #BDBDBD
   padding: 0 1rem;
 `;
 
