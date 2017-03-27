@@ -41,14 +41,15 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   }
 
   componentDidMount() {
-    const urlS = `https://congress.api.sunlightfoundation.com/floor_updates?chamber=senate`;
-    const urlH = `https://congress.api.sunlightfoundation.com/floor_updates?chamber=house`;
-    request.get(urlS)
+    const url = `https://congress.api.sunlightfoundation.com/floor_updates`;
+    request.get(url)
+           .query({ chamber: 'senate' })
            .use(nocache)
            .end( (err, res) => {
              this.setState({ messages_senate: res.body.results })
            });
-     request.get(urlH)
+     request.get(url)
+            .query({ chamber: 'house' })
             .use(nocache)
             .end( (err, res) => {
               this.setState({ messages_house: res.body.results })

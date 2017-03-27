@@ -9,6 +9,9 @@ import React from 'react';
 
 
 function LinkItem(props) {
+
+  console.log(props.item[0]);
+
   return (
     <div>
       {props.type}: {props.item}
