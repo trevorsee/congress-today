@@ -27,13 +27,13 @@ const Item = styled.div`
 function MessageItem(props) {
 
   const billItems = props.message.bill_ids.map((item) => {
-    return <LinkItemContainer item={item} type='bill_ids' />
+    return <LinkItemContainer item={item} type='bill' />
   });
   const rollItems = props.message.roll_ids.map((item) => {
-    return <LinkItemContainer item={item} type='roll_ids' />
+    return <LinkItemContainer item={item} type='roll' />
   });
   const legislatorItems = props.message.legislator_ids.map((item) => {
-    return <LinkItemContainer item={item} type='legislator_ids' />
+    return <LinkItemContainer item={item} type='legislator' />
   });
 
   return (
