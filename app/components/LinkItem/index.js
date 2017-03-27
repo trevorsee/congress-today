@@ -5,17 +5,21 @@
 */
 
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
+const Container = styled.div`
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  margin: 0 1rem;
+`;
 
 function LinkItem(props) {
 
-  console.log(props.item[0]);
-
   return (
-    <div>
-      {props.type}: {props.item}
-    </div>
+    <Container>
+      {props.item[0].bill_id}
+    </Container>
   );
 }
 

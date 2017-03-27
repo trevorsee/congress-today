@@ -15,6 +15,7 @@ export class LinkItemContainer extends React.PureComponent { // eslint-disable-l
     super(props);
 
     this.state = {
+      loaded: false,
       link_object: [],
     }
   }
@@ -26,13 +27,20 @@ export class LinkItemContainer extends React.PureComponent { // eslint-disable-l
            .use(nocache)
            .end( (err, res) => {
              this.setState({ link_object: res.body.results })
+             this.setState({ loaded: true })
            });
   }
 
   render() {
-    return (
-      <LinkItem item={this.state.link_object} type={this.props.type}/>
-    );
+    if (this.state.loaded == true){
+      return (
+        <LinkItem item={this.state.link_object} type={this.props.type}/>
+      );
+    } else {
+      return (
+        <div></div>
+      )
+    }
   }
 }
 

@@ -243,6 +243,7 @@
     "styled-components": "1.1.2",
     "superagent": "^3.5.1",
     "superagent-no-cache": "^0.1.1",
+    "uigradients": "^0.2.1",
     "warning": "3.0.0",
     "webpack": "^2.2.0-rc.3",
     "whatwg-fetch": "2.0.1"

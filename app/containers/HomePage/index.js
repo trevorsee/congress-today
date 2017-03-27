@@ -61,7 +61,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
       <Container>
         <Navigation />
         <Wrapper>
-          <MessageList messages={this.state.messages_house} chamber='house' />
+          <MessageList messages={this.state.messages_house} chamber='house'/>
           <MessageList messages={this.state.messages_senate} chamber='senate'/>
         </Wrapper>
       </Container>

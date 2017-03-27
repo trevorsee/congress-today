@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import color from 'utils/colors'
 import styled from 'styled-components';
 import moment from 'moment';
 import LinkItemContainer from 'containers/LinkItemContainer';
@@ -15,12 +16,18 @@ const ItemContainer = styled.li`
 `;
 
 const Item = styled.div`
-  background: ${props => props.chamber=='house' ? 'green' : 'blue'};
+  background: ${props => props.chamber=='house' ? `linear-gradient(to bottom right,${color.main.default},${color.main.dark})` : `linear-gradient(to bottom right,${color.alt.default},${color.alt.dark})`};
   color: white;
-  font-size: 1em;
-  margin: 0 0 1em;
-  padding: 0.25em 1em;
-  border-radius: 3px;
+  font-size: 1rem;
+  margin: 0 0 1rem;
+  padding: 0.25em 1rem;
+  border-radius: 6px;
+`;
+
+const Timestamp = styled.div`
+  padding-left: 1rem;
+  font-size: .75rem;
+  color: #828282;
 `;
 
 
@@ -39,7 +46,7 @@ function MessageItem(props) {
   return (
     <div>
       <ItemContainer>
-        <div>{moment(props.message.timestamp).format("hh:mm A")}</div>
+        <Timestamp>{moment(props.message.timestamp).format("hh:mm A")}</Timestamp>
         <Item chamber={props.chamber}>
           <p>{props.message.update}</p>
         </Item>

@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import color from 'utils/colors'
 import styled from 'styled-components';
 import MessageItem from 'components/MessageItem';
 
@@ -22,12 +23,12 @@ const List = styled.ul`
 
 const Headline = styled.h1`
   margin: 1rem 0 0;
-  padding: 0;
+  padding: 0rem;
   text-align: center;
   font-size: 1rem;
   font-weight: normal;
   text-transform: uppercase;
-  color: ${props => props.chamber=='house' ? 'green' : 'blue'};
+  color: ${props => props.chamber=='house' ? `${color.main.default}` : `${color.alt.default}`};
 `;
 
 function MessageList(props) {
