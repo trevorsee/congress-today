@@ -27,8 +27,8 @@ function Navigation() {
   return (
     <NavContainer>
       <a>- Upcoming Votes</a>
-      <Title>Today</Title>
-      <a>Active Legislation -</a>
+      <a href='/'><Title>Today</Title></a>
+      <a href='/legislation'>Active Legislation -</a>
     </NavContainer>
   );
 }
