@@ -18,7 +18,8 @@ function LinkItem(props) {
 
   return (
     <Container>
-      {props.item[0].bill_id}
+      <div>{props.item[0].bill_id}</div>
+        <div>{props.item[0].official_title}</div>
     </Container>
   );
 }
