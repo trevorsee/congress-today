@@ -10,10 +10,13 @@ const colors = {
     dark: '#2469AD'
   },
   grey: {
-    default: '#',
-    light: '#',
-    dark: '#'
+    default: '#C4C4C4',
+    light: '#E4E4E4',
+    medium: '#828282',
+    dark: '#4F4F4F'
   },
+  white: '#FFFFFF',
+  black: '#333333'
 }
 
 export default colors

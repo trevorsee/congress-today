@@ -52,6 +52,7 @@ function MessageItem(props) {
         </Item>
       </ItemContainer>
       {billItems}
+      {rollItems}
     </div>
   );
 }
