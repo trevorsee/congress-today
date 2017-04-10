@@ -34,7 +34,6 @@ export class LinkItemContainer extends React.PureComponent { // eslint-disable-l
 
   render() {
     if (this.state.loaded == true){
-      console.log(this.props.type);
       return (
         <LinkItem item={this.state.link_object} type={this.props.type}/>
       );

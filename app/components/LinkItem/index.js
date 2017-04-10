@@ -30,8 +30,6 @@ function LinkItem(props) {
 
   var Icon = icons[props.type];
 
-  console.log(props.item)
-
   return (
     <Container>
       <Icon />

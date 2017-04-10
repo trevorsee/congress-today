@@ -1,5 +1,5 @@
 /*
- * HomePage
+ * Home
  *
  * This is the first thing users see of our App, at the '/' route
  *
@@ -26,11 +26,10 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   background: white;
-  border-top: 1px solid #BDBDBD
   padding: 0 1rem;
 `;
 
-export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export default class Home extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
 

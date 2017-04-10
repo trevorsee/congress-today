@@ -20,7 +20,7 @@ This is what a standard (generated) route looks like for a container:
   name: 'home',
   getComponent(nextState, cb) {
     const importModules = Promise.all([
-      import('containers/HomePage')
+      import('pages/Home')
     ]);
 
     const renderRoute = loadModule(cb);
@@ -97,7 +97,7 @@ To add an index route, use the following pattern:
   name: 'home',
   getComponent(nextState, cb) {
     const importModules = Promise.all([
-      import('containers/HomePage')
+      import('pages/Home')
     ]);
 
     const renderRoute = loadModule(cb);
@@ -195,7 +195,7 @@ export function* getXhrPodcast(slug) {
 }
 ```
 
-Wait (`take`) for the LOAD_POST constant, which contains the slug payload from the `getPost()` function in actions.js. 
+Wait (`take`) for the LOAD_POST constant, which contains the slug payload from the `getPost()` function in actions.js.
 
 When the action is fired then dispatch the `getXhrPodcast()` function to get the response from your api. On success dispatch the `postLoaded()` action (`yield put`) which sends back the response and can be added into the reducer state.
 

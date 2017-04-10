@@ -1,5 +1,5 @@
 /**
- * NotFoundPage
+ * NotFound
  *
  * This is the page we show when the user visits a url that doesn't have a route
  *
@@ -15,7 +15,7 @@ export default class NotFound extends React.PureComponent { // eslint-disable-li
   render() {
     return (
       <h1>
-        This is NotFoundPage component!
+        This is NotFound component!
       </h1>
     );
   }

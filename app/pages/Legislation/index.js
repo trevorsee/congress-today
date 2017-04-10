@@ -1,6 +1,6 @@
 /*
  *
- * LegislationContainer
+ * Legislation
  *
  */
 
@@ -11,6 +11,7 @@
  import styled from 'styled-components';
 
  import BillList from 'components/BillList';
+ import TabList from 'components/TabList';
  import Navigation from 'components/Navigation';
 
  const Container = styled.div`
@@ -24,12 +25,21 @@
    padding: 0 1rem;
  `;
 
- export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+ export default class Legislation extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
    constructor(props) {
      super(props);
 
      this.state = {
        list: [],
+       tabs: [
+         { label: 'Introduced', isActive: true },
+         { label: 'Passed in the House', isActive: false },
+         { label: 'Passed in the Senate', isActive: false },
+         { label: 'Awaiting Signature', isActive: false },
+         { label: 'Vetoed', isActive: false },
+         { label: 'Enacted into Law', isActive: false },
+         { label: 'All', isActive: false }
+       ]
      }
    }
 
@@ -38,7 +48,6 @@
      request.get(url)
             .use(nocache)
             .end( (err, res) => {
-              console.log(res);
               this.setState({ list: res.body.results })
             });
    }
@@ -47,6 +56,7 @@
      return (
        <Container>
          <Navigation />
+         <TabList tabs={this.state.tabs} />
          <Wrapper>
            <BillList bills={this.state.list} />
          </Wrapper>
