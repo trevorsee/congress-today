@@ -19,7 +19,7 @@ injectGlobal`
   }
 
   #app {
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 0 2rem;
     min-height: 100%;
     min-width: 100%;
   }

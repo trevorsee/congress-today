@@ -12,6 +12,7 @@ const NavContainer = styled.nav`
   justify-content: space-between;
   padding: 0;
   margin: 0 0 1rem;
+  height: 2rem;
 `;
 
 const Title = styled.h1`
