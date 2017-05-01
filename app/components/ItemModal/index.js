@@ -10,7 +10,6 @@ import Modal from 'react-modal';
 
 
 function ItemModal(props) {
-  console.log(props.modalIsOpen);
   return (
     <Modal
       isOpen={ props.modalIsOpen }

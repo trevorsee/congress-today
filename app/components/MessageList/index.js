@@ -20,7 +20,7 @@ const ListContainer = styled.ul`
 const List = styled.ul`
   list-style: none;
   margin: 0;
-  padding: 2rem 0 0;
+  padding: 2rem 0 2rem;
 `;
 
 const Headline = styled.h1`
@@ -47,7 +47,7 @@ const BottomFade = styled(HeadlineWrapper)`
 
 function MessageList(props) {
   const messageItems = props.messages.map((message) => {
-    return <MessageItem key={message.id} message={message} chamber={props.chamber}/>
+    return <MessageItem key={message.timestamp} message={message} chamber={props.chamber}/>
   });
 
   return (

@@ -1,4 +1,31 @@
-// makeSelectLocationState expects a plain JS object for the routing state
+/**
+ * The global state selectors
+ */
+
+import { createSelector } from 'reselect';
+
+const selectGlobal = (state) => state.get('global');
+
+const makeSelectLoading = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('loading')
+);
+
+const makeSelectError = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('error')
+);
+
+const makeSelectHouseFeed = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('houseFeed')
+);
+
+const makeSelectSenateFeed = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('senateFeed')
+);
+
 const makeSelectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
@@ -16,5 +43,10 @@ const makeSelectLocationState = () => {
 };
 
 export {
+  selectGlobal,
+  makeSelectHouseFeed,
+  makeSelectSenateFeed,
+  makeSelectLoading,
+  makeSelectError,
   makeSelectLocationState,
 };

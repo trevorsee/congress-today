@@ -8,3 +8,7 @@
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
+
+ export const LOAD_MESSAGES = 'app/App/LOAD_MESSAGES';
+ export const LOAD_MESSAGES_SUCCESS = 'app/App/LOAD_MESSAGES_SUCCESS';
+ export const LOAD_MESSAGES_ERROR = 'app/App/LOAD_MESSAGES_ERROR';

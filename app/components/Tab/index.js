@@ -30,7 +30,6 @@ const TabBox = styled.button`
 
 function Tab(props) {
   function test(){
-    console.log('setao');
   }
 
   return (

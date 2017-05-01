@@ -41,8 +41,6 @@ export default class Home extends React.PureComponent { // eslint-disable-line r
     this.closeModal = this.closeModal.bind(this);
 
     this.state = {
-      messages_senate: [],
-      messages_house: [],
       modalIsOpen: false
     };
   }
@@ -59,32 +57,16 @@ export default class Home extends React.PureComponent { // eslint-disable-line r
     });
   }
 
-  componentDidMount() {
-    const url = `https://congress.api.sunlightfoundation.com/floor_updates`;
-    request.get(url)
-           .query({ chamber: 'senate' })
-           .use(nocache)
-           .end( (err, res) => {
-             this.setState({ messages_senate: res.body.results })
-           });
-     request.get(url)
-            .query({ chamber: 'house' })
-            .use(nocache)
-            .end( (err, res) => {
-              console.log(res);
-              this.setState({ messages_house: res.body.results })
-            });
-  }
-
   render() {
+    console.log(this.props)
     // temp
     //<button onClick={this.openModal}>TESTING</button>
     return (
       <Container>
         <Navigation />
         <Wrapper>
-          <MessageList messages={this.state.messages_house} chamber='house'/>
-          <MessageList messages={this.state.messages_senate} chamber='senate'/>
+          <MessageList messages={this.props.house} chamber='house'/>
+          <MessageList messages={this.props.senate} chamber='senate'/>
           <ItemModal modalIsOpen={this.state.modalIsOpen}
                    onRequestClose={this.closeModal} />
         </Wrapper>
