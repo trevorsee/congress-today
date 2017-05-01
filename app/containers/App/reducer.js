@@ -20,7 +20,8 @@ import {
   LOAD_BILLS,
   LOAD_BILLS_ERROR,
   SET_BILLFILTER,
-  TOGGLE_MODAL,
+  SET_MODAL_ON,
+  SET_MODAL_OFF,
 } from './constants';
 
 // The initial state of the App
@@ -91,9 +92,12 @@ function appReducer(state = initialState, action) {
         .setIn(['filterTabs', 5, 'isActive'], false)
         .setIn(['filterTabs', 6, 'isActive'], false)
         .setIn(['filterTabs', action.filter, 'isActive'], true)
-    case TOGGLE_MODAL:
+    case SET_MODAL_ON:
       return state
-        .set('showModal', showModal => !showModal)
+        .set('showModal', true)
+    case SET_MODAL_OFF:
+      return state
+        .set('showModal', false)
     default:
       return state;
   }

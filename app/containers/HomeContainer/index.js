@@ -11,12 +11,11 @@ import makeSelectHomeContainer from './selectors';
 
 import Home from 'pages/Home';
 import { makeSelectHouseFeed, makeSelectSenateFeed, makeSelectMessagesLoading, makeSelectMessagesError, makeSelectIsModalShown } from 'containers/App/selectors';
-import { loadMessages, toggleModal } from '../App/actions';
+import { loadMessages, setModalOn, setModalOff } from '../App/actions';
 
 export class HomeContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
     this.props.loadM();
-    console.log(this.props);
   }
 
   render() {
@@ -40,7 +39,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     loadM: () => dispatch(loadMessages()),
-    openModal: () => dispatch(toggleModal()),
+    openModal: () => dispatch(setModalOn()),
   };
 }
 

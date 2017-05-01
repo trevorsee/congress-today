@@ -34,7 +34,6 @@ export class TabContainer extends React.PureComponent { // eslint-disable-line r
     return (
       <ListContainer>
         {listItems}
-        {console.log(this.props)}
       </ListContainer>
     );
   }

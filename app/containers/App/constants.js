@@ -16,4 +16,5 @@
  export const LOAD_BILLS_SUCCESS = 'app/App/LOAD_BILLS_SUCCESS';
  export const LOAD_BILLS_ERROR = 'app/App/LOAD_BILLS_ERROR';
  export const SET_BILLFILTER = 'app/App/SET_BILLFILTER';
- export const TOGGLE_MODAL = 'app/App/TOGGLE_MODAL';
+ export const SET_MODAL_ON = 'app/App/SET_MODAL_ON';
+ export const SET_MODAL_OFF = 'app/App/SET_MODAL_OFF';

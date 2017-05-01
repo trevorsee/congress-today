@@ -23,7 +23,8 @@ import {
   LOAD_BILLS_SUCCESS,
   LOAD_BILLS_ERROR,
   SET_BILLFILTER,
-  TOGGLE_MODAL,
+  SET_MODAL_ON,
+  SET_MODAL_OFF,
 } from './constants';
 
 export function loadMessages() {
@@ -101,8 +102,14 @@ export function setBillFilter(filter) {
   };
 }
 
-export function toggleModal() {
+export function setModalOn() {
   return {
-    type: TOGGLE_MODAL,
+    type: SET_MODAL_ON,
+  };
+}
+
+export function setModalOff() {
+  return {
+    type: SET_MODAL_OFF,
   };
 }

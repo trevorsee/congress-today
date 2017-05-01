@@ -8,7 +8,6 @@ import { makeSelectBillFilter } from 'containers/App/selectors';
 
 export function* getBills() {
   const filter = yield select(makeSelectBillFilter());
-  console.log('current filter: ' + filter);
   const billURL = `https://congress.api.sunlightfoundation.com/bills${filter}`;
 
   try {

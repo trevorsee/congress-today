@@ -13,6 +13,7 @@
  import BillList from 'components/BillList';
  import TabContainer from 'containers/TabContainer';
  import Navigation from 'components/Navigation';
+ import ItemModal from 'components/ItemModal';
 
  const Container = styled.div`
    max-width: 80rem;
@@ -37,6 +38,7 @@
          <TabContainer />
          <Wrapper>
            <BillList bills={this.props.bills} />
+           <ItemModal modalIsOpen={this.props.isModalShown} />
          </Wrapper>
        </Container>
      );
