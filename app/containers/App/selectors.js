@@ -49,6 +49,10 @@ const makeSelectBillFilterTabs = () => createSelector(
   selectGlobal,
   (globalState) => globalState.get('filterTabs').toJS()
 );
+const makeSelectIsModalShown = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('showModal')
+);
 
 const makeSelectLocationState = () => {
   let prevRoutingState;
@@ -78,4 +82,5 @@ export {
   makeSelectBillFilter,
   makeSelectBillFilterTabs,
   makeSelectLocationState,
+  makeSelectIsModalShown,
 };

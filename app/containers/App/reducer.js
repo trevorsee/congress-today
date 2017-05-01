@@ -20,6 +20,7 @@ import {
   LOAD_BILLS,
   LOAD_BILLS_ERROR,
   SET_BILLFILTER,
+  TOGGLE_MODAL,
 } from './constants';
 
 // The initial state of the App
@@ -45,6 +46,7 @@ const initialState = fromJS({
     { id: 5, label: 'Enacted into Law', isActive: false },
     { id: 6, label: 'All', isActive: false }
   ],
+  showModal: false,
 });
 
 function appReducer(state = initialState, action) {
@@ -89,7 +91,9 @@ function appReducer(state = initialState, action) {
         .setIn(['filterTabs', 5, 'isActive'], false)
         .setIn(['filterTabs', 6, 'isActive'], false)
         .setIn(['filterTabs', action.filter, 'isActive'], true)
-
+    case TOGGLE_MODAL:
+      return state
+        .set('showModal', showModal => !showModal)
     default:
       return state;
   }

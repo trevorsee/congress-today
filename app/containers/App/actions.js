@@ -23,6 +23,7 @@ import {
   LOAD_BILLS_SUCCESS,
   LOAD_BILLS_ERROR,
   SET_BILLFILTER,
+  TOGGLE_MODAL,
 } from './constants';
 
 export function loadMessages() {
@@ -97,5 +98,11 @@ export function setBillFilter(filter) {
     type: SET_BILLFILTER,
     filter,
     query,
+  };
+}
+
+export function toggleModal() {
+  return {
+    type: TOGGLE_MODAL,
   };
 }
