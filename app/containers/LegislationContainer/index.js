@@ -8,6 +8,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import makeSelectLegislationContainer from './selectors';
+import setBillFilter from './actions';
 
 import Legislation from 'pages/Legislation';
 import { makeSelectBillFeed, makeSelectBillsLoading, makeSelectBillsError } from 'containers/App/selectors';
@@ -36,6 +37,10 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     loadB: () => dispatch(loadBills()),
+    onClickedFilter: (evt, id) => {
+      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
+      dispatch(setBillFilter(id));
+    }
   };
 }
 

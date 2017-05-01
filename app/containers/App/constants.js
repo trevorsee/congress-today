@@ -15,3 +15,4 @@
  export const LOAD_BILLS = 'app/App/LOAD_BILLS';
  export const LOAD_BILLS_SUCCESS = 'app/App/LOAD_BILLS_SUCCESS';
  export const LOAD_BILLS_ERROR = 'app/App/LOAD_BILLS_ERROR';
+ export const SET_BILLFILTER = 'app/App/SET_BILLFILTER';

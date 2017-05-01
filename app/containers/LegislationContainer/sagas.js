@@ -4,8 +4,11 @@ import { LOAD_BILLS} from 'containers/App/constants';
 import { billsLoaded, billsLoadingError } from 'containers/App/actions';
 
 import request from 'utils/request';
+import { makeSelectBillFilter } from 'containers/App/selectors';
 
 export function* getBills() {
+  const filter = yield select(makeSelectBillFilter());
+  console.log(filter);
   const billURL = `https://congress.api.sunlightfoundation.com/bills`;
 
   try {

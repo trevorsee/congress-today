@@ -19,6 +19,7 @@ import {
   LOAD_BILLS_SUCCESS,
   LOAD_BILLS,
   LOAD_BILLS_ERROR,
+  SET_BILLFILTER,
 } from './constants';
 
 // The initial state of the App
@@ -34,6 +35,16 @@ const initialState = fromJS({
     error: false,
     items: [],
   },
+  billFilter: 0,
+  filterTabs: [
+    { id: 0, label: 'Introduced', isActive: true },
+    { id: 1, label: 'Passed in the House', isActive: false },
+    { id: 2, label: 'Passed in the Senate', isActive: false },
+    { id: 3, label: 'Awaiting Signature', isActive: false },
+    { id: 4, label: 'Vetoed', isActive: false },
+    { id: 5, label: 'Enacted into Law', isActive: false },
+    { id: 6, label: 'All', isActive: false }
+  ],
 });
 
 function appReducer(state = initialState, action) {
@@ -66,6 +77,9 @@ function appReducer(state = initialState, action) {
       return state
         .setIn(['billFeed', 'error'], action.error)
         .setIn(['billFeed', 'loading'], false);
+    case SET_BILLFILTER:
+      return state
+        .set('billFilter', action.id);
     default:
       return state;
   }

@@ -22,6 +22,7 @@ import {
   LOAD_BILLS,
   LOAD_BILLS_SUCCESS,
   LOAD_BILLS_ERROR,
+  SET_BILLFILTER,
 } from './constants';
 
 export function loadMessages() {
@@ -62,5 +63,12 @@ export function billsLoadingError(error) {
   return {
     type: LOAD_BILLS_ERROR,
     error,
+  };
+}
+
+export function setBillFilter(filter) {
+  return {
+    type: SET_BILLFILTER,
+    filter,
   };
 }

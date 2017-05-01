@@ -41,6 +41,11 @@ const makeSelectBillFeed = () => createSelector(
   (globalState) => globalState.getIn(['billFeed', 'items'])
 );
 
+const makeSelectBillFilter = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('billFilter')
+);
+
 const makeSelectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
@@ -66,5 +71,6 @@ export {
   makeSelectBillFeed,
   makeSelectBillsLoading,
   makeSelectBillsError,
+  makeSelectBillFilter,
   makeSelectLocationState,
 };
