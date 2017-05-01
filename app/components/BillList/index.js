@@ -31,7 +31,7 @@ const Headline = styled.h1`
 
 function BillList(props) {
   const listItems = props.bills.map((bill) => {
-    return <BillItem key={bill.id} bill={bill} />
+    return <BillItem key={bill.bill_id} bill={bill} />
   });
 
   return (

@@ -58,7 +58,6 @@ export default class Home extends React.PureComponent { // eslint-disable-line r
   }
 
   render() {
-    console.log(this.props)
     // temp
     //<button onClick={this.openModal}>TESTING</button>
     return (

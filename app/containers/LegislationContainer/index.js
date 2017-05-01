@@ -18,8 +18,6 @@ export class LegislationContainer extends React.PureComponent { // eslint-disabl
     this.props.loadB();
   }
   render() {
-    console.log(this.props);
-
     return (
       <Legislation bills={this.props.billFeed}/>
     );

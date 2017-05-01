@@ -34,7 +34,7 @@ const Timestamp = styled.div`
 function MessageItem(props) {
 
   const billItems = props.message.bill_ids.map((item) => {
-    return <LinkItemContainer item={item} type='bill' />
+    return <LinkItemContainer key={item} type='bill' />
   });
   const rollItems = props.message.roll_ids.map((item) => {
     return <LinkItemContainer item={item} type='roll' />
@@ -52,7 +52,6 @@ function MessageItem(props) {
         </Item>
       </ItemContainer>
       {billItems}
-      {rollItems}
     </div>
   );
 }

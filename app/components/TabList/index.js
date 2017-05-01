@@ -19,7 +19,7 @@ const ListContainer = styled.nav`
 
 function TabList(props) {
   const listItems = props.tabs.map((tab) => {
-    return <Tab data={tab} />
+    return <Tab key={tab.id} data={tab} />
   });
 
   return (

@@ -19,8 +19,6 @@ export class HomeContainer extends React.PureComponent { // eslint-disable-line 
   }
 
   render() {
-    console.log(this.props);
-
     return (
       <Home house={this.props.houseFeed} senate={this.props.senateFeed} />
     );

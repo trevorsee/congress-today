@@ -24,7 +24,7 @@ export class LinkItemContainer extends React.PureComponent { // eslint-disable-l
   componentWillMount() {
     const url = `https://congress.api.sunlightfoundation.com/bills`;
     request.get(url)
-           .query({ bill_id: this.props.item })
+           .query({ bill_id: this.props.key })
            .use(nocache)
            .end( (err, res) => {
              this.setState({ link_object: res.body.results })

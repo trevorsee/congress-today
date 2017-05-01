@@ -31,13 +31,13 @@
 
      this.state = {
        tabs: [
-         { label: 'Introduced', isActive: true },
-         { label: 'Passed in the House', isActive: false },
-         { label: 'Passed in the Senate', isActive: false },
-         { label: 'Awaiting Signature', isActive: false },
-         { label: 'Vetoed', isActive: false },
-         { label: 'Enacted into Law', isActive: false },
-         { label: 'All', isActive: false }
+         { id: 0, label: 'Introduced', isActive: true },
+         { id: 1, label: 'Passed in the House', isActive: false },
+         { id: 2, label: 'Passed in the Senate', isActive: false },
+         { id: 3, label: 'Awaiting Signature', isActive: false },
+         { id: 4, label: 'Vetoed', isActive: false },
+         { id: 5, label: 'Enacted into Law', isActive: false },
+         { id: 6, label: 'All', isActive: false }
        ]
      }
    }
