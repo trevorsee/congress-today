@@ -12,3 +12,6 @@
  export const LOAD_MESSAGES = 'app/App/LOAD_MESSAGES';
  export const LOAD_MESSAGES_SUCCESS = 'app/App/LOAD_MESSAGES_SUCCESS';
  export const LOAD_MESSAGES_ERROR = 'app/App/LOAD_MESSAGES_ERROR';
+ export const LOAD_BILLS = 'app/App/LOAD_BILLS';
+ export const LOAD_BILLS_SUCCESS = 'app/App/LOAD_BILLS_SUCCESS';
+ export const LOAD_BILLS_ERROR = 'app/App/LOAD_BILLS_ERROR';

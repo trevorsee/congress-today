@@ -6,24 +6,39 @@ import { createSelector } from 'reselect';
 
 const selectGlobal = (state) => state.get('global');
 
-const makeSelectLoading = () => createSelector(
+const makeSelectMessagesLoading = () => createSelector(
   selectGlobal,
-  (globalState) => globalState.get('loading')
+  (globalState) => globalState.getIn(['messageFeed', 'loading'])
 );
 
-const makeSelectError = () => createSelector(
+const makeSelectMessagesError = () => createSelector(
   selectGlobal,
-  (globalState) => globalState.get('error')
+  (globalState) => globalState.getIn(['messageFeed', 'error'])
 );
 
 const makeSelectHouseFeed = () => createSelector(
   selectGlobal,
-  (globalState) => globalState.get('houseFeed')
+  (globalState) => globalState.getIn(['messageFeed', 'houseFeed'])
 );
 
 const makeSelectSenateFeed = () => createSelector(
   selectGlobal,
-  (globalState) => globalState.get('senateFeed')
+  (globalState) => globalState.getIn(['messageFeed', 'senateFeed'])
+);
+
+const makeSelectBillsLoading = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.getIn(['billFeed', 'loading'])
+);
+
+const makeSelectBillsError = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.getIn(['billFeed', 'error'])
+);
+
+const makeSelectBillsFeed = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.getIn(['billFeed', 'items'])
 );
 
 const makeSelectLocationState = () => {
@@ -46,7 +61,10 @@ export {
   selectGlobal,
   makeSelectHouseFeed,
   makeSelectSenateFeed,
-  makeSelectLoading,
-  makeSelectError,
+  makeSelectMessagesLoading,
+  makeSelectMessagesError,
+  makeSelectBillsFeed,
+  makeSelectBillsLoading,
+  makeSelectBillsError,
   makeSelectLocationState,
 };

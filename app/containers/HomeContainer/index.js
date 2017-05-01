@@ -10,7 +10,7 @@ import { createStructuredSelector } from 'reselect';
 import makeSelectHomeContainer from './selectors';
 
 import Home from 'pages/Home';
-import { makeSelectHouseFeed, makeSelectSenateFeed, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
+import { makeSelectHouseFeed, makeSelectSenateFeed, makeSelectMessagesLoading, makeSelectMessagesError } from 'containers/App/selectors';
 import { loadMessages } from '../App/actions';
 
 export class HomeContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -33,8 +33,8 @@ HomeContainer.propTypes = {
 const mapStateToProps = createStructuredSelector({
   houseFeed: makeSelectHouseFeed(),
   senateFeed: makeSelectSenateFeed(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
+  loading: makeSelectMessagesLoading(),
+  error: makeSelectMessagesError(),
 });
 
 function mapDispatchToProps(dispatch) {

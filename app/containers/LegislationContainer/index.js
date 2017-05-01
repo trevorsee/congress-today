@@ -10,7 +10,7 @@ import { createStructuredSelector } from 'reselect';
 import makeSelectLegislationContainer from './selectors';
 
 import Legislation from 'pages/Legislation';
-import { makeSelectBillFeed, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
+import { makeSelectBillFeed, makeSelectMessagesLoading, makeSelectMessagesError } from 'containers/App/selectors';
 import { loadMessages } from '../App/actions';
 
 export class LegislationContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
