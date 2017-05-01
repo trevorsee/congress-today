@@ -11,7 +11,7 @@
  import styled from 'styled-components';
 
  import BillList from 'components/BillList';
- import TabList from 'components/TabList';
+ import TabContainer from 'containers/TabContainer';
  import Navigation from 'components/Navigation';
 
  const Container = styled.div`
@@ -46,7 +46,7 @@
      return (
        <Container>
          <Navigation />
-         <TabList tabs={this.state.tabs} />
+         <TabContainer />
          <Wrapper>
            <BillList bills={this.props.bills} />
          </Wrapper>

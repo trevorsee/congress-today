@@ -67,8 +67,35 @@ export function billsLoadingError(error) {
 }
 
 export function setBillFilter(filter) {
+  let query = ''
+  switch(filter){
+    case 0:
+      query = '?history.active=true&history.senate_passage_result__not=pass&history.house_passage_result__not=pass'
+      break;
+    case 1:
+      query = '?history.house_passage_result=pass&history.senate_passage_result__not=pass'
+      break;
+    case 2:
+      query = '?history.senate_passage_result=pass&history.house_passage_result__not=pass'
+      break;
+    case 3:
+      query = '?history.awaiting_signature=true'
+      break;
+    case 4:
+      query = '?history.vetoed=true'
+      break;
+    case 5:
+      query = '?history.enacted=true'
+      break;
+    case 6:
+      query = ''
+      break;
+    default:
+      break;
+  }
   return {
     type: SET_BILLFILTER,
     filter,
+    query,
   };
 }
