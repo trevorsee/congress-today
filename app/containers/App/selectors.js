@@ -36,7 +36,7 @@ const makeSelectBillsError = () => createSelector(
   (globalState) => globalState.getIn(['billFeed', 'error'])
 );
 
-const makeSelectBillsFeed = () => createSelector(
+const makeSelectBillFeed = () => createSelector(
   selectGlobal,
   (globalState) => globalState.getIn(['billFeed', 'items'])
 );
@@ -63,7 +63,7 @@ export {
   makeSelectSenateFeed,
   makeSelectMessagesLoading,
   makeSelectMessagesError,
-  makeSelectBillsFeed,
+  makeSelectBillFeed,
   makeSelectBillsLoading,
   makeSelectBillsError,
   makeSelectLocationState,

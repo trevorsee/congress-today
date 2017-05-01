@@ -60,7 +60,7 @@ function appReducer(state = initialState, action) {
         .setIn(['billFeed', 'items'], false)
     case LOAD_BILLS_SUCCESS:
       return state
-        .setIn(['billFeed', 'items'], action.results)
+        .setIn(['billFeed', 'items'], action.items.results)
         .setIn(['billFeed', 'loading'], false)
     case LOAD_BILLS_ERROR:
       return state

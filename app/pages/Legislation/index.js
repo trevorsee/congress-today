@@ -30,7 +30,6 @@
      super(props);
 
      this.state = {
-       list: [],
        tabs: [
          { label: 'Introduced', isActive: true },
          { label: 'Passed in the House', isActive: false },
@@ -43,22 +42,13 @@
      }
    }
 
-   componentDidMount() {
-     const url = `https://congress.api.sunlightfoundation.com/bills`;
-     request.get(url)
-            .use(nocache)
-            .end( (err, res) => {
-              this.setState({ list: res.body.results })
-            });
-   }
-
    render() {
      return (
        <Container>
          <Navigation />
          <TabList tabs={this.state.tabs} />
          <Wrapper>
-           <BillList bills={this.state.list} />
+           <BillList bills={this.props.bills} />
          </Wrapper>
        </Container>
      );

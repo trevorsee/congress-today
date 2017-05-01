@@ -10,29 +10,34 @@ import { createStructuredSelector } from 'reselect';
 import makeSelectLegislationContainer from './selectors';
 
 import Legislation from 'pages/Legislation';
-import { makeSelectBillFeed, makeSelectMessagesLoading, makeSelectMessagesError } from 'containers/App/selectors';
-import { loadMessages } from '../App/actions';
+import { makeSelectBillFeed, makeSelectBillsLoading, makeSelectBillsError } from 'containers/App/selectors';
+import { loadBills } from '../App/actions';
 
 export class LegislationContainer extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentWillMount() {
+    this.props.loadB();
+  }
   render() {
+    console.log(this.props);
+
     return (
-      <div>
-      </div>
+      <Legislation bills={this.props.billFeed}/>
     );
   }
 }
 
 LegislationContainer.propTypes = {
-  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
-  LegislationContainer: makeSelectLegislationContainer(),
+  billFeed: makeSelectBillFeed(),
+  billsLoading: makeSelectBillsLoading(),
+  billsError: makeSelectBillsError(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch,
+    loadB: () => dispatch(loadBills()),
   };
 }
 

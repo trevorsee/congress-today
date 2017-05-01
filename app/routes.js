@@ -40,10 +40,22 @@ export default function createRoutes(store) {
     }, {
       path: '/legislation',
       name: 'legislationContainer',
-      getComponent(location, cb) {
-        import('pages/Legislation')
-          .then(loadModule(cb))
-          .catch(errorLoading);
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/LegislationContainer/reducer'),
+          import('containers/LegislationContainer/sagas'),
+          import('containers/LegislationContainer'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('legislationContainer', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
       },
     }, {
       path: '*',

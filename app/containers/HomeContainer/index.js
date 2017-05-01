@@ -33,8 +33,8 @@ HomeContainer.propTypes = {
 const mapStateToProps = createStructuredSelector({
   houseFeed: makeSelectHouseFeed(),
   senateFeed: makeSelectSenateFeed(),
-  loading: makeSelectMessagesLoading(),
-  error: makeSelectMessagesError(),
+  messagesLoading: makeSelectMessagesLoading(),
+  messagesError: makeSelectMessagesError(),
 });
 
 function mapDispatchToProps(dispatch) {

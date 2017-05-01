@@ -6,14 +6,14 @@ import { billsLoaded, billsLoadingError } from 'containers/App/actions';
 import request from 'utils/request';
 
 export function* getBills() {
-  const billURL = `https://congress.api.sunlightfoundation.com/floor_updates?chamber=house`;
+  const billURL = `https://congress.api.sunlightfoundation.com/bills`;
 
   try {
     // Call our request helper (see 'utils/request')
     const billFeed = yield call(request, billURL);
-    yield put(billLoaded(billFeed));
+    yield put(billsLoaded(billFeed));
   } catch (err) {
-    yield put(billLoadingError(err));
+    yield put(billsLoadingError(err));
   }
 }
 
@@ -24,7 +24,7 @@ export function* feedData() {
   // Watches for LOAD_REPOS actions and calls getMessages when one comes in.
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution
-  const watcher = yield takeLatest(LOAD_BILL, getBills);
+  const watcher = yield takeLatest(LOAD_BILLS, getBills);
 
   // Suspend execution until location changes
   yield take(LOCATION_CHANGE);
